@@ -1,0 +1,48 @@
+﻿@model List<Service>
+@{ 
+    int count = 1;
+}
+<div class="container">
+    <div class="header d-flex justify-content-between mt-3">
+        <h3>Services</h3>
+        <div class="ml-4">
+            <a class="btn btn-success" asp-action="Create">Create</a>
+        </div>
+    </div>
+    <table class="table mt-3" >
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Header</th>
+                <th scope="col">Desc</th>
+                <th scope="col">Settings</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var service in Model)
+            {
+                var a = service.Desc.Length/4;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@service.Header</td>
+                    <td>@service.Desc.Substring(0,a) ...</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@service.Id">
+                            <i class="icon-options"></i>
+                        </a>
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@service.Id">
+                            <i class="icon-pencil"></i>
+                        </a>
+                        <form style="display:inline-block" method="post" asp-action="Delete" asp-route-id="@service.Id">
+                            <button class="btn btn-danger btn-sm" type="submit">
+                                <i class=" icon-close"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                count++;
+            }
+        </tbody>
+    </table>
+</div>
