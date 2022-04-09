@@ -1,0 +1,21 @@
+﻿@model About
+<div class="about-area pb-155">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="about-content">
+                    <h2>@Model.Header<span>@Model.CompanyName</span></h2>
+                    <p>@Model.Desc</p>
+                    <p class="hidden-sm">@Model.Desc2</p>
+                    <a class="default-btn" href="about.html">view courses</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="about-img">
+                    <img src="~/assets/img/about/@Model.Image" alt="about">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

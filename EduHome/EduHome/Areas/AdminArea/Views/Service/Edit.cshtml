@@ -1,0 +1,21 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit">
+        <div class="form-group">
+            <label asp-for="Header"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Header" maxlength="500" placeholder="Header">
+            <span class="text-danger" asp-validation-for="Header"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Desc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Desc" maxlength="500" placeholder="Description">
+            <span class="text-danger" asp-validation-for="Desc"></span>
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Save</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

@@ -24,7 +24,7 @@ namespace EduHome.Areas.AdminArea.Controllers
 
             return View(services);
         }
-
+        #region Create
         public IActionResult Create()
         {
             return View();
@@ -52,5 +52,69 @@ namespace EduHome.Areas.AdminArea.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        #endregion
+        #region Detail
+        public async Task<IActionResult> Detail(int id)
+        {
+            Service service = await _context.Services.Where(m => m.Id == id).FirstOrDefaultAsync();
+            return View(service);
+        }
+        #endregion
+        #region Delete
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int Id)
+        {
+            Service service = await _context.Services.Where(m => m.Id == Id).FirstOrDefaultAsync();
+
+            if (service == null) return NotFound();
+            _context.Services.Remove(service);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
+        #region Edit
+
+        public async Task<IActionResult> Edit(int Id)
+        {
+            Service service = await _context.Services.Where(m => m.Id == Id).FirstOrDefaultAsync();
+            if (service == null) return NotFound();
+
+
+            return View(service);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int Id, Service service)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            if (Id != service.Id) return NotFound();
+
+            Service dbService = await _context.Services.AsNoTracking().Where(m => m.Id == Id).FirstOrDefaultAsync();
+
+            if (dbService.Header.ToLower().Trim() == service.Header.ToLower().Trim() && dbService.Desc.ToLower().Trim() == service.Desc.ToLower().Trim())
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            bool isExist = _context.Services.Any(m => m.Header.ToLower().Trim() == service.Header.ToLower().Trim() && m.Desc.ToLower().Trim() == service.Desc.ToLower().Trim());
+            if (isExist)
+            {
+                ModelState.AddModelError("Name", "Bu Service artiq movcuddur");
+                return View();
+            }
+
+            
+            _context.Update(service);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
     }
 }

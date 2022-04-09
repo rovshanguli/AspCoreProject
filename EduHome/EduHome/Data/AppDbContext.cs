@@ -17,5 +17,6 @@ namespace EduHome.Data
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<SliderDetail> SliderDetails { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<About> Abouts { get; set; }
     }
 }
