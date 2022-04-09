@@ -32,6 +32,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(About about)
+        
         {
             var dbAbout = await _context.Abouts.FirstOrDefaultAsync();
             if (dbAbout == null) return NotFound();

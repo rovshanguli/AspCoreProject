@@ -1,0 +1,24 @@
+﻿@model CoursesVM
+<div class="container">
+    <div class="image">
+        <img src="~/assets/img/course/@Model.Image" />
+        <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+            <input asp-for="Photo" />
+            <input asp-for="Name" type="text" value="@Model.Name" />
+            <input asp-for="Desc" type="text" value="@Model.Desc" />
+            <input asp-for="About" type="text" value="@Model.About" />
+            <input asp-for="Apply" type="text" value="@Model.Apply" />
+            <input asp-for="Certification" type="text" value="@Model.Certification" />
+            <input asp-for="Start" type="datetime" value="@Model.Start" />
+            <input asp-for="Duration" type="text" value="@Model.Duration" />
+            <input asp-for="ClassDuration" type="text" value="@Model.ClassDuration" />
+            <input asp-for="Level" type="text" value="@Model.Level" />
+            <input asp-for="Lanuguage" type="text" value="@Model.Lanuguage" />
+            <input asp-for="Student" type="number" value="@Model.Student" />
+            <input asp-for="Assesments" type="text" value="@Model.Assesments" />
+            <button type="submit" class="btn btn-primary me-2">Submit</button>
+            <a asp-action="Index" class="btn btn-light">Cancel</a>
+        </form>
+    </div>
+</div>
+

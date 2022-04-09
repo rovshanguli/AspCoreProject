@@ -1,0 +1,31 @@
+﻿@model CoursesVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+            <input asp-for="Name" type="text" placeholder="CourseName" />
+            <input asp-for="Desc" type="text" placeholder="Course Desc" />
+            <input asp-for="About" type="text" placeholder="About Course" />
+            <input asp-for="Apply" type="text" placeholder="Apply" />
+            <input asp-for="Certification" type="text" placeholder="Certfication" />
+
+
+            <input asp-for="Start" type="datetime" placeholder="Start" />
+            <input asp-for="Duration" type="number" placeholder="Duration" />
+            <input asp-for="ClassDuration" type="number" placeholder="ClassDuration" />
+            <input asp-for="Level" type="text" placeholder="Level" />
+            <input asp-for="Lanuguage" type="text" placeholder="Language" />
+            <input asp-for="Student" type="number" placeholder="student" />
+            <input asp-for="Assesments" type="text" placeholder="Assesments" />
+
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
