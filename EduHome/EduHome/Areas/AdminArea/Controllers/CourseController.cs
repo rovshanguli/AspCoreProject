@@ -43,7 +43,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CoursesVM coursesVM)
         {
-
+            if (!ModelState.IsValid) return View();
             if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
 
 

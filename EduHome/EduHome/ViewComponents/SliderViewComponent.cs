@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace EduHome.ViewComponents
 {
+    
     public class SliderViewComponent : ViewComponent
     {
         private readonly AppDbContext _context;

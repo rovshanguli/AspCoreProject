@@ -1,0 +1,64 @@
+﻿@model EventVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container my-5">
+
+
+    <form class="forms-sample mt-5" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <div><img src="~/assets/img/event/@Model.events.Image" alt="Slider" style="width:150px; height:150px" /></div>
+            <label asp-for="Photo">Event Image:</label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+        <div class="form-group">
+            <div><img src="~/assets/img/event/@Model.eventDetail.DetailImage" alt="Slider" style="width:150px; height:150px" /></div>
+            <label asp-for="detailPhoto">Detail Image:</label>
+            <input class="form-control" style="width:300px" asp-for="detailPhoto">
+            <span class="text-danger" asp-validation-for="eventDetail.DetailImage"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="events.Start">Date:</label>
+            <input class="form-control" style="width:300px" asp-for="events.Start">
+            <span class="text-danger" asp-validation-for="events.Start"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="eventDetail.Desc">Desc:</label>
+            <input class="form-control" style="width:300px" asp-for="eventDetail.Desc">
+            <span class="text-danger" asp-validation-for="eventDetail.Desc"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="events.Name">Name:</label>
+            <input class="form-control" style="width:300px" asp-for="events.Name">
+            <span class="text-danger" asp-validation-for="events.Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="events.Start">Time:</label>
+            <input class="form-control" style="width:300px" asp-for="events.Start">
+            <span class="text-danger" asp-validation-for="events.Start
+                  "></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="eventDetail.Adress">Location:</label>
+            <input class="form-control" style="width:300px" asp-for="eventDetail.Adress">
+            <span class="text-danger" asp-validation-for="eventDetail.Adress"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="events.Name">Detail Name:</label>
+            <input class="form-control" style="width:300px" asp-for="events.Name">
+            <span class="text-danger" asp-validation-for="events.Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="eventDetail.Desc">Desc:</label>
+            <input class="form-control" style="width:300px" asp-for="eventDetail.Desc">
+            <span class="text-danger" asp-validation-for="eventDetail.Desc"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

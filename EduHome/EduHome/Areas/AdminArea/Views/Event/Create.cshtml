@@ -1,0 +1,35 @@
+﻿@model EventVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <h3>Add Event</h3>
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+            <input asp-for="events.Name" placeholder="Name"/>
+            <label>Event Start</label>
+            <input asp-for="events.Start" type="date" />
+            <label>Event End</label>
+            <input asp-for="events.End" type="date"  />
+            <input asp-for="events.City" type="text" placeholder="City" />
+
+
+            <h2 class="mt-3">Add Detail</h2>
+            <label asp-for="detailPhoto">Photo</label>
+            <input class="form-control" style="width:300px" asp-for="detailPhoto">
+            <label>Adress</label>
+            <input asp-for="eventDetail.Adress" type="text" placeholder="Duration" />
+            <label>Desc</label>
+            <input asp-for="eventDetail.Desc" type="text" placeholder="Desc" />
+            
+            
+
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

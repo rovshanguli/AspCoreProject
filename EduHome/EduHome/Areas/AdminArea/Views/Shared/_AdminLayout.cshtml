@@ -157,13 +157,13 @@
                             <i class="icon-screen-desktop menu-icon"></i>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item">
-                        <a class="nav-link"  asp-area="AdminArea" asp-controller="Service" asp-action="Index" >
+                        <a class="nav-link" asp-area="AdminArea" asp-controller="Service" asp-action="Index">
                             <span class="menu-title">Services</span>
                             <i class="icon-layers menu-icon"></i>
                         </a>
-                       
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="About" asp-action="Edit">
@@ -172,14 +172,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
-                            <span class="menu-title">Form Elements</span>
+                        <a class="nav-link" asp-controller="Notice" asp-action="Index">
+                            <span class="menu-title">Notices</span>
                             <i class="icon-book-open menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/chartist.html">
-                            <span class="menu-title">Charts</span>
+                        <a class="nav-link" asp-controller="Event" asp-action="Index">
+                            <span class="menu-title">Events</span>
                             <i class="icon-chart menu-icon"></i>
                         </a>
                     </li>
@@ -205,11 +205,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item pro-upgrade">
-                        <span class="nav-link">
-                            <a class="btn btn-block px-0 btn-rounded btn-upgrade" href="https://www.bootstrapdash.com/product/stellar-admin-template/" target="_blank"> <i class="icon-badge mx-2"></i> Upgrade to Pro</a>
-                        </span>
-                    </li>
+
                 </ul>
             </nav>
             @RenderBody()
@@ -233,5 +229,6 @@
     <!-- Custom js for this page -->
     <script src="~/admin/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+    @RenderSection("Scripts", false)
 </body>
 </html>

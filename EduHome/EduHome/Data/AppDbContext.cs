@@ -20,5 +20,9 @@ namespace EduHome.Data
         public DbSet<About> Abouts { get; set; }
         public DbSet<CourseDetail> CourseDetails { get; set; }
         public DbSet<CourseFeatures> CourseFeatures { get; set; }
+        public DbSet<Notice> Notices { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<EventDetail> EventDetails { get; set; }
+
     }
 }

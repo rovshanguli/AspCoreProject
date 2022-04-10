@@ -16,9 +16,9 @@ namespace EduHome.ViewComponents
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int take)
         {
-            List<CourseDetail> courseDetails = await _context.CourseDetails.ToListAsync();
+            List<CourseDetail> courseDetails = await _context.CourseDetails.Take(take).ToListAsync();
             return (await Task.FromResult(View(courseDetails)));
         }
     }

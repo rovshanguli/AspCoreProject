@@ -36,7 +36,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         {
             var dbAbout = await _context.Abouts.FirstOrDefaultAsync();
             if (dbAbout == null) return NotFound();
-
+            
             if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
 
             if (!about.photo.CheckFileType("image/"))

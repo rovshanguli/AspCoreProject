@@ -1,0 +1,21 @@
+﻿@model Notice
+@{ ViewData["Title"] = "Create"; }
+
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Create">
+        <div class="form-group">
+            <label asp-for="Date">Header</label>
+            <input class="form-control" style="width:300px" asp-for="Date">
+            <span class="text-danger" asp-validation-for="Date"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Desc">Description</label>
+            <input class="form-control" style="width:300px" asp-for="Desc">
+            <span class="text-danger" asp-validation-for="Desc"></span>
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+
