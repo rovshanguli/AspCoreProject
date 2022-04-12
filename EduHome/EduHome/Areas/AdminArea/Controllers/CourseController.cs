@@ -158,6 +158,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int Id, CoursesVM courseVM)
         {
+            if (!ModelState.IsValid) return View();
             var dbCourse = await GetCourseById(Id);
             if (dbCourse == null) return NotFound();
 

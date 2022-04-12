@@ -44,7 +44,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         {
 
             if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
-
+            if (!ModelState.IsValid) return View();
 
             if (!eventVM.detailPhoto.CheckFileType("image/"))
             {
@@ -162,7 +162,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         {
             var dbEvents = await GetEventById(Id);
             if (dbEvents == null) return NotFound();
-
+            if (!ModelState.IsValid) return View();
             if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
 
             if (!eventVM.Photo.CheckFileType("image/"))
@@ -203,6 +203,9 @@ namespace EduHome.Areas.AdminArea.Controllers
                 await eventVM.Photo.CopyToAsync(stream);
             }
             dbEvents.Image = fileName;
+            dbEvents.Start = eventVM.events.Start;
+            dbEvents.Name = eventVM.events.Name;
+            dbEvents.End = eventVM.events.End;
             fileName = Guid.NewGuid().ToString() + "_" + eventVM.detailPhoto.FileName;
             path = Helper.GetFilePath(_env.WebRootPath, "assets/img/event", fileName);
             using (FileStream stream = new FileStream(path, FileMode.Create))

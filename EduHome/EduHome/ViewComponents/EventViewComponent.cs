@@ -20,7 +20,11 @@ namespace EduHome.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<Event> events = await _context.Events.OrderByDescending(m => m.Id).Take(4).ToListAsync();
+            List<Event> events = await _context.Events
+                .OrderByDescending(m => m.Id)
+                .Include(m => m.EventDetail)
+                .Take(4)
+                .ToListAsync();
             return (await Task.FromResult(View(events)));
         }
     }

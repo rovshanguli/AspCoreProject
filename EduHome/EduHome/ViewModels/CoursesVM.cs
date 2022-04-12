@@ -12,8 +12,9 @@ namespace EduHome.ViewModels
     {
         public int Id { get; set; }
         public string Image { get; set; }
-        [Required,MinLength(10)]
+        [Required, MinLength(10)]
         public string Name { get; set; }
+        [Required,MinLength(15,ErrorMessage ="15-den asagi ola bilmez")]
         public string Desc { get; set; }
         public string About { get; set; }
         public string Apply { get; set; }
@@ -27,6 +28,7 @@ namespace EduHome.ViewModels
         public string Lanuguage { get; set; }
         public int Student { get; set; }
         public string Assesments { get; set; }
+        [Required]
         public IFormFile Photo { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace EduHome.Models
         public int Id { get; set; }
         [Required]
         public string Header { get; set; }
-        [Required]
+        [Required,MinLength(15,ErrorMessage ="15-den asagi ola bilmez")]
         public string Desc { get; set; }
     }
 }

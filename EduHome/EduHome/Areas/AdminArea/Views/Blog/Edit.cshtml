@@ -1,0 +1,31 @@
+﻿
+@model Blog
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <input asp-for="BlogName" type="text" placeholder="BlogName" />
+            <span asp-validation-for="BlogName"></span>
+
+            <input asp-for="Desc" type="text" placeholder="Course Desc" />
+            <span asp-validation-for="Desc"></span>
+
+            <input asp-for="Author" type="text" placeholder="Author" />
+            <input asp-for="Date" type="date" placeholder="Start" />
+
+
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+@section Scripts{
+    <partial name="_ValidationPartial" />
+}

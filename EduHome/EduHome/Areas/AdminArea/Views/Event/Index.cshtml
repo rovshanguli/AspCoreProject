@@ -35,7 +35,7 @@
                                          <td>@count</td>
                                          <td><img style="width:100px; height:50px; border-radius:unset" src="~/assets/img/event/@evnt.Image" alt="Photo" /></td>
                                          <td>@evnt.Name</td>
-                                         <td>@evnt.EventDetail.Desc.Substring(0,9)</td>
+                                         <td>@evnt.EventDetail.Desc.Substring(0,9) ...</td>
                                         <td>
                                             <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@evnt.Id">
                                                 <i class="icon-options"></i>

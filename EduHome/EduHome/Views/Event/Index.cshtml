@@ -1,0 +1,38 @@
+﻿@model List<Event>
+<!-- Event Start -->
+<div class="event-area three text-center pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            @foreach (var event1 in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-event mb-60">
+                        <div class="event-img">
+                            <a href="event-details.html">
+                                <img src="assets/img/event/@event1.Image" alt="event">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                            <div class="event-date">
+                                <h3>@event1.Start.Day<span>@String.Format("{0:MMM }", event1.Start)</span></h3>
+                            </div>
+                        </div>
+                        <div class="event-content text-left">
+                            <h4><a href="event-details.html">@event1.Name</a></h4>
+                            <ul>
+                                <li><span>time:</span> @String.Format("{0:m}", @event1.Start) </li>
+                                <li><span>venue</span> @event1.City</li>
+                            </ul>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-controller="event" asp-action="detail" asp-route-id="@event1.Id">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- Event End -->

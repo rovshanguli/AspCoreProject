@@ -91,6 +91,9 @@ namespace EduHome.Areas.AdminArea.Controllers
         }
         #endregion
         #endregion
+        #region Detail
+
+        #endregion
 
     }
 }

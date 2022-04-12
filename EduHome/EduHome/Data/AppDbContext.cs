@@ -23,6 +23,7 @@ namespace EduHome.Data
         public DbSet<Notice> Notices { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<EventDetail> EventDetails { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
     }
 }

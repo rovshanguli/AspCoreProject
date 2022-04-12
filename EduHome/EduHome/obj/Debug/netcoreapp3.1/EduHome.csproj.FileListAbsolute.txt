@@ -179,3 +179,16 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Edu
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\EduHome.csproj.AssemblyReference.cache
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Event\Edit.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Testimonial\Default.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Blog\Default.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Subscribe\Default.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Create.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Detail.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Blog\Edit.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Event\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Detail.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Detail.cshtml.g.cs

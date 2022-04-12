@@ -2,7 +2,7 @@
 <div class="container">
     <div class="image">
         <img src="~/assets/img/course/@Model.Image" />
-        <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
             <input asp-for="Photo" />
             <input asp-for="Name" type="text" value="@Model.Name" />
             <input asp-for="Desc" type="text" value="@Model.Desc" />
@@ -22,3 +22,6 @@
     </div>
 </div>
 
+@section Scripts{
+    <partial name="_ValidationPartial" />
+}
