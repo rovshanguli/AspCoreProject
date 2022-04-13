@@ -24,6 +24,9 @@ namespace EduHome.Data
         public DbSet<Event> Events { get; set; }
         public DbSet<EventDetail> EventDetails { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<TeacherSkill> TeacherSkills { get; set; }
 
     }
 }
