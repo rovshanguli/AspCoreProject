@@ -197,3 +197,7 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Edu
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\EduHome.genruntimeconfig.cache
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Teacher\Detail.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\EduHome.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Teacher\Default.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Detail.cshtml.g.cs
