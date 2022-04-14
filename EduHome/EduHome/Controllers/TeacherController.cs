@@ -22,10 +22,16 @@ namespace EduHome.Controllers
             return View();
         }
 
+
+
         public async Task<IActionResult> Detail(int id)
         {
 
-            Teacher teacher = await _context.Teachers.Include(m => m.Skills).ThenInclude(m => m.Skill).Where(m => m.Id == id).FirstOrDefaultAsync();
+            Teacher teacher = await _context.Teachers
+                .Include(m => m.TeacherSkills)
+                .ThenInclude(m => m.Skill)
+                .Where(m => m.Id == id)
+                .FirstOrDefaultAsync();
             List<TeacherSkill> teacherSkills = await _context.TeacherSkills.Include(m => m.Skill).Where(m => m.TeacherId == id).ToListAsync();
             List<Skill> skillsData = new List<Skill>();
             List<int> skillsPercent = new List<int>();

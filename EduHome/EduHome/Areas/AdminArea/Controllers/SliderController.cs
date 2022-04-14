@@ -1,5 +1,6 @@
 ﻿using EduHome.Data;
 using EduHome.Models;
+using EduHome.Utilities.Helpers;
 using EduHome.ViewModels.Admin;
 using LessonMigration.Utilities.File;
 using LessonMigration.Utilities.Helpers;
@@ -72,7 +73,7 @@ namespace EduHome.Areas.AdminArea.Controllers
                 Slider slider = new Slider
                 {
                     Image = fileName,
-                    sliderDetailId = 1
+                    SliderDetailId = 1
                 };
 
                 await _context.Sliders.AddAsync(slider);

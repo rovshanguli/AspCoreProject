@@ -1,5 +1,6 @@
 ﻿using EduHome.Data;
 using EduHome.Models;
+using EduHome.Utilities.Helpers;
 using EduHome.ViewModels.Admin;
 using LessonMigration.Utilities.File;
 using LessonMigration.Utilities.Helpers;
@@ -87,7 +88,6 @@ namespace EduHome.Areas.AdminArea.Controllers
 
             Teacher lastTeacher = await _context.Teachers.OrderByDescending(m => m.Id).FirstOrDefaultAsync();
 
-            int num = teacherVM.Skills.Where(m => m.IsSelected is true).Count();
             int count = 0;
             foreach (var skill in teacherVM.Skills.Where(m => m.IsSelected is true))
             {
@@ -110,7 +110,7 @@ namespace EduHome.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            Teacher teacher = await _context.Teachers.Where(m => m.Id == id).Include(m => m.Skills).FirstOrDefaultAsync();
+            Teacher teacher = await _context.Teachers.Where(m => m.Id == id).Include(m => m.TeacherSkills).FirstOrDefaultAsync();
 
             if (teacher == null) return NotFound();
 

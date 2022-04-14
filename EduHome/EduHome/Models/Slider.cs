@@ -13,7 +13,7 @@ namespace EduHome.Models
         public int Id { get; set; }
         [Required]
         public string Image { get; set; }
-        public int sliderDetailId { get; set; }
+        public int SliderDetailId { get; set; }
         public SliderDetail sliderDetail { get; set; }
 
         [NotMapped]

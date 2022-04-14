@@ -30,5 +30,22 @@ namespace EduHome.Controllers
                 .FirstOrDefaultAsync();
             return View(course);
         }
+
+
+        public async Task<IActionResult> Search(string search)
+        {
+            List<CourseDetail> courses = await _context.CourseDetails.ToListAsync();
+
+            List<CourseDetail> searchedCourses = new List<CourseDetail> { };
+
+            foreach (var course in courses)
+            {
+                if (course.Name.ToLower().Contains(search.ToLower()))
+                {
+                    searchedCourses.Add(course);
+                }
+            }
+            return View();
+        }
     }
 }

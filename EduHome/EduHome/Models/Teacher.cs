@@ -18,6 +18,6 @@ namespace EduHome.Models
         public string Mail { get; set; }
         public string Number { get; set; }
         public string Skype { get; set; }
-        public List<TeacherSkill> Skills { get; set; }
+        public List<TeacherSkill> TeacherSkills { get; set; }
     }
 }

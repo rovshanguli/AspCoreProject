@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace LessonMigration.Utilities.Helpers
+namespace EduHome.Utilities.Helpers
 {
     public static class Helper
     {
