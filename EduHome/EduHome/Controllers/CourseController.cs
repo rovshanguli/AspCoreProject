@@ -45,7 +45,7 @@ namespace EduHome.Controllers
                     searchedCourses.Add(course);
                 }
             }
-            return View();
+            return View(searchedCourses);
         }
     }
 }

@@ -1,10 +1,17 @@
 ﻿using EduHome.Models;
 using EduHome.ViewModels.Account;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MimeKit.Text;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
@@ -14,12 +21,13 @@ namespace EduHome.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IWebHostEnvironment _env;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IWebHostEnvironment env)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-
+            _env = env;
         }
 
         #region Register
@@ -51,7 +59,63 @@ namespace EduHome.Controllers
                 }
                 return View(registerVM);
             }
-            await _signInManager.SignInAsync(newUser, false);
+
+
+            if (string.IsNullOrWhiteSpace(registerVM.Email))
+            {
+                return RedirectToAction("Index", "Error");
+            }
+            AppUser appUser = await _userManager.FindByEmailAsync(registerVM.Email);
+
+            if (appUser == null)
+                return RedirectToAction("Index", "Error");
+
+            var message = new MimeMessage();
+
+            message.From.Add(new MailboxAddress("EduHome", "quliyevr879@gmail.com"));
+
+            message.To.Add(new MailboxAddress(appUser.FullName, appUser.Email));
+            message.Subject = "Confirm Email";
+
+            string emailbody = string.Empty;
+
+            using (StreamReader streamReader = new StreamReader(Path.Combine(_env.WebRootPath, "Templates", "Confirm.html")))
+            {
+                emailbody = streamReader.ReadToEnd();
+            }
+
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId = newUser.Id, token = code }, Request.Scheme, Request.Host.ToString());
+
+
+            emailbody = emailbody.Replace("{{fullname}}", $"{appUser.FullName}").Replace("{{code}}", $"{link}");
+
+            message.Body = new TextPart(TextFormat.Html) { Text = emailbody };
+
+            using var smtp = new SmtpClient();
+
+            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+            smtp.Authenticate("quliyevr879@gmail.com", "1920Yevlax");
+            smtp.Send(message);
+            smtp.Disconnect(true);
+
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public async Task<IActionResult> VerifyEmail(string userId, string token)
+        {
+            if (userId == null || token == null) return BadRequest();
+
+            AppUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user is null) return BadRequest();
+
+
+            await _userManager.ConfirmEmailAsync(user, token);
+
+            await _signInManager.SignInAsync(user, false);
+
             return RedirectToAction("Index", "Home");
         }
         #endregion
@@ -112,5 +176,93 @@ namespace EduHome.Controllers
         }
         #endregion
 
+        #region ForgotPassword
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordVM forgotPasswordVM)
+        {
+            if (!ModelState.IsValid) return View(forgotPasswordVM);
+
+            var user = await _userManager.FindByEmailAsync(forgotPasswordVM.Email);
+
+            if (user is null)
+            {
+                ModelState.AddModelError("", "This email hasn't been registrated");
+                return View(forgotPasswordVM);
+            }
+
+            var message = new MimeMessage();
+
+            message.From.Add(new MailboxAddress("EduHome", "quliyevr879@gmail.com"));
+
+            message.To.Add(new MailboxAddress(user.FullName,user.Email));
+            message.Subject = "Reset Password";
+
+            string emailbody = string.Empty;
+
+            using (StreamReader streamReader = new StreamReader(Path.Combine(_env.WebRootPath, "Templates", "Reset.html")))
+            {
+                emailbody = streamReader.ReadToEnd();
+            }
+
+            string forgotpasswordtoken = await _userManager.GeneratePasswordResetTokenAsync(user);
+            string url = Url.Action(nameof(ResetPassword), "Account", new { email = user.Email, Id = user.Id, token = forgotpasswordtoken,  }, Request.Scheme);
+
+            emailbody = emailbody.Replace("{{fullname}}", $"{user.FullName}").Replace("{{code}}", $"{url}");
+
+            message.Body = new TextPart(TextFormat.Html) { Text = emailbody };
+
+            using var smtp = new SmtpClient();
+
+            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+            smtp.Authenticate("quliyevr879@gmail.com", "1920Yevlax");
+            smtp.Send(message);
+            smtp.Disconnect(true);
+            return RedirectToAction("Index","Home");
+        }
+        #endregion
+
+
+        #region Reset Password
+        [HttpGet]
+        public IActionResult ResetPassword(string email, string token)
+        {
+            var resetPasswordModel = new ResetPasswordVM { Email = email, Token = token };
+            return View(resetPasswordModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPasswordVM)
+        {
+            if (!ModelState.IsValid) return View(resetPasswordVM);
+
+            var user = await _userManager.FindByEmailAsync(resetPasswordVM.Email);
+
+            if (user is null) return NotFound();
+
+            IdentityResult result = await _userManager.ResetPasswordAsync(user, resetPasswordVM.Token, resetPasswordVM.Password);
+
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View(resetPasswordVM);
+
+            }
+
+
+            return RedirectToAction(nameof(Login));
+            
+        }
+        #endregion
     }
 }
+

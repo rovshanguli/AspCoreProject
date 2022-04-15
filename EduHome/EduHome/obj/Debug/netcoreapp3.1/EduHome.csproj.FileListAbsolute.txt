@@ -213,3 +213,8 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Edu
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\SendGrid.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs

@@ -1,5 +1,7 @@
 using EduHome.Data;
 using EduHome.Models;
+using EduHome.Services.Interfaces;
+using LessonMigration.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,22 +43,20 @@ namespace EduHome
                 options.Password.RequireDigit = true;
 
                 options.User.RequireUniqueEmail = true;
-
                 options.Lockout.MaxFailedAccessAttempts = 3;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
                 options.Lockout.AllowedForNewUsers = true;
 
-
-
-
             });
 
             services.AddControllersWithViews();
-
+            
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IEmailService, EmailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
