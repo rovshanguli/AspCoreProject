@@ -67,8 +67,7 @@ namespace EduHome.Controllers
             }
             AppUser appUser = await _userManager.FindByEmailAsync(registerVM.Email);
 
-            if (appUser == null)
-                return RedirectToAction("Index", "Error");
+            if (appUser == null) return RedirectToAction("Index", "Error");
 
             var message = new MimeMessage();
 
@@ -97,6 +96,8 @@ namespace EduHome.Controllers
             smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
             smtp.Authenticate("quliyevr879@gmail.com", "1920Yevlax");
             smtp.Send(message);
+
+
             smtp.Disconnect(true);
 
 
