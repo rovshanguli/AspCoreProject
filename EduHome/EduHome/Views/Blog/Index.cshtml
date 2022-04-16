@@ -1,4 +1,10 @@
-﻿	<!-- Banner Area Start -->
+﻿@model Paginate<BlogVM>
+@{ ViewData["Title"] = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+                int count = ((Model.CurrentPage - 1) * 10) + 1; }
+
+
+<!-- Banner Area Start -->
 <div class="banner-area-wrapper">
     <div class="banner-area text-center">
         <div class="container">
@@ -6,7 +12,7 @@
                 <div class="col-xs-12">
                     <div class="banner-content-wrapper">
                         <div class="banner-content">
-                            <h2>event / details</h2>
+                            <h2>blog</h2>
                         </div>
                     </div>
                 </div>
@@ -15,6 +21,56 @@
     </div>
 </div>
 <!-- Banner Area End -->
-<div class="container">
-    @await Component.InvokeAsync("Blog", 9)
+<!-- Blog Area Start -->
+<div class="blog-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            @foreach (var blog in Model.Datas)
+            {
+<div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="single-blog">
+        <div class="blog-img">
+            <a asp-controller="Blog" asp-action="Detail" asp-route-Id="@blog.Id"><img src="~/Assets/img/blog/@blog.Image" alt="blog"></a>
+            <div class="blog-hover">
+                <a asp-controller="Blog" asp-action="Detail" asp-route-Id="@blog.Id"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="blog-content">
+            <div class="blog-top">
+                <p>@blog.Author  /  @blog.Date  /  <i class="fa fa-comments-o"></i> 4</p>
+            </div>
+            <div class="blog-bottom">
+                <h2><a asp-controller="Blog" asp-action="Detail" asp-route-Id="@blog.Id">@blog.Name</a></h2>
+                <a asp-controller="Blog" asp-action="Detail" asp-route-Id="@blog.Id">read more</a>
+            </div>
+        </div>
+    </div>
+</div>            }
+
+            <div class="col-xs-12">
+                <div style="justify-content:center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination ">
+                            <li class="page-item @(Model.HasPrevious ? "": "disabled")">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage-1)">Previous</a>
+                            </li>
+                            @for (int i = 1; i <= Model.TotalPage; i++)
+                            {
+                <li class="page-item @(i == Model.CurrentPage ? "disabled" : "")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+                </li>}
+
+                            <li class="page-item @(Model.HasNext ? "": "disabled")">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage+1)">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
 </div>
+<!-- Blog Area End -->

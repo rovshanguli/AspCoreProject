@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LessonMigration.Utilities.Pagination
+namespace EduHome.Utilities.Pagination
 {
     public class Paginate<T>
     {
