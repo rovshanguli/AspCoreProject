@@ -4,6 +4,7 @@ using EduHome.Utilities.Helpers;
 using EduHome.ViewModels;
 using LessonMigration.Utilities.File;
 using LessonMigration.Utilities.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -12,11 +13,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace EduHome.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles ="Admin, Moderator")]
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;
@@ -26,9 +29,24 @@ namespace EduHome.Areas.AdminArea.Controllers
             _context = context;
             _env = env;
         }
+
         public async Task<IActionResult> Index()
         {
-            List<CourseDetail> courseDetails = await _context.CourseDetails.Include(m => m.Feature).ToListAsync();
+            var AdminId = this.User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
+            List<CourseDetail> courseDetails = new List<CourseDetail> { };
+            var admin = _context.Users.Where(m => m.Id == "ae5e7c95 - 14e6 - 4578 - 92f6 - 154190fe9216");
+            if(AdminId == "ae5e7c95-14e6-4578-92f6-154190fe9216")
+            {
+                  courseDetails = await _context.CourseDetails.Include(m => m.Feature).ToListAsync();
+            }
+            else
+            {
+                courseDetails = await _context.CourseDetails
+                    .Where(m => m.UserId == this.User.FindFirstValue(ClaimTypes.NameIdentifier))
+                    .Include(m => m.Feature)
+                    .ToListAsync();
+            }
+
 
             return View(courseDetails);
         }
@@ -42,9 +60,9 @@ namespace EduHome.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Create(CoursesVM coursesVM)
         {
-            if (!ModelState.IsValid) return View();
             if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
 
 
@@ -94,7 +112,9 @@ namespace EduHome.Areas.AdminArea.Controllers
                 About = coursesVM.About,
                 Apply = coursesVM.Apply,
                 Certification = coursesVM.Certification,
-                FeatureId = courseFeature.LastOrDefault().Id
+                FeatureId = courseFeature.LastOrDefault().Id,
+                UserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier)
+
             };
 
             

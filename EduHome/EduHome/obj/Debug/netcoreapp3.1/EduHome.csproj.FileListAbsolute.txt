@@ -43,10 +43,14 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Raz
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Teacher\Create.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Teacher\Detail.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Teacher\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\User\Index.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewImports.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewStart.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Detail.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
@@ -89,6 +93,7 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Edu
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\EduHome.pdb
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\EduHome.Views.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\EduHome.Views.pdb
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -133,8 +138,12 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Mic
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
@@ -210,11 +219,3 @@ C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Edu
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\EduHome.csproj.CopyComplete
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\EduHome.genruntimeconfig.cache
 C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\EduHome.csproj.AssemblyReference.cache
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\SendGrid.dll
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MailKit.dll
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MimeKit.dll
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
-C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs

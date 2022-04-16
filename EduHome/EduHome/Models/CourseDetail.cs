@@ -18,5 +18,7 @@ namespace EduHome.Models
         public string Certification { get; set; }
         public int FeatureId { get; set; }
         public CourseFeatures Feature { get; set; }
+
+        public string UserId { get; set; }
     }
 }

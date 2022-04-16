@@ -16,5 +16,12 @@ namespace EduHome.Utilities.Helpers
                 System.IO.File.Delete(path);
             }
         }
+
+        public enum UserRoles
+        {
+            Admin,
+            Moderator,
+            User
+        }
     }
 }

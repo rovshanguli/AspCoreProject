@@ -25,7 +25,6 @@ namespace EduHome.Data
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<TeacherSkill> TeacherSkills { get; set; }
-        public DbSet<Subscripe> Subscripes { get; set; }
 
 
     }

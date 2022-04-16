@@ -1,4 +1,4 @@
-﻿@model Subscripe
+﻿
 <div class="subscribe-area pt-60 pb-70" style="margin-top:15px">
     <div class="container">
         <div class="row">
@@ -8,9 +8,9 @@
                     <p>I must explain to you how all this mistaken idea </p>
                 </div>
                 <div class="newsletter-form mc_embed_signup">
-                    <form  method="post" asp-controller="Subscripe" asp-action="Subscribe" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <form  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
                         <div id="mc_embed_signup_scroll" class="mc-form">
-                            <input type="email" value="" asp-for="Email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your e-mail address" asp-controller="Subscrieb" asp-action="" required>
+                            <input class="email" id="mce-EMAIL" placeholder="Enter your e-mail address" asp-controller="Subscribe" asp-action="" required>
                             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                             <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
                             <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe"><span>subscribe</span></button>
