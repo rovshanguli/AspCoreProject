@@ -16,9 +16,9 @@ namespace EduHome.ViewComponents
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int take)
         {
-            List<Blog> blogs = await _context.Blogs.ToListAsync();
+            List<Blog> blogs = await _context.Blogs.OrderByDescending(m => m.Id).Take(take).ToListAsync();
             return (await Task.FromResult(View(blogs)));
         }
     }

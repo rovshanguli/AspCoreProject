@@ -10,6 +10,7 @@ using MimeKit;
 using MimeKit.Text;
 using System;
 using System.IO;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using static EduHome.Utilities.Helpers.Helper;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
@@ -147,6 +148,7 @@ namespace EduHome.Controllers
             if (!ModelState.IsValid) return View(loginVM);
 
             AppUser user = await _userManager.FindByEmailAsync(loginVM.UserNameOrEmail);
+            
             if (user is null)
             {
                 user = await _userManager.FindByNameAsync(loginVM.UserNameOrEmail);
@@ -177,8 +179,15 @@ namespace EduHome.Controllers
                 ModelState.AddModelError("", "Email or Password is Wrong");
                 return View(loginVM);
             }
-
-            return RedirectToAction("Index", "Home");
+            if(User.FindFirstValue(ClaimTypes.Role) == "User")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Dashboard", "AdminArea");
+            }
+            
         }
         #endregion
 

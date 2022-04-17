@@ -1,6 +1,7 @@
 ﻿using EduHome.Data;
 using EduHome.Models;
 using EduHome.ViewModels.Admin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace EduHome.Controllers
 {
+
     public class ContactController : Controller
     {
         private readonly AppDbContext _context;
@@ -46,7 +48,7 @@ namespace EduHome.Controllers
         {
             return View();
         }
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CommentVM commentVM)
