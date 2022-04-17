@@ -67,8 +67,10 @@ namespace EduHome.Controllers
                 return RedirectToAction("Index", "Error");
             }
             AppUser appUser = await _userManager.FindByEmailAsync(registerVM.Email);
+         
 
             if (appUser == null) return RedirectToAction("Index", "Error");
+            await _userManager.AddToRoleAsync(newUser, UserRoles.User.ToString());
 
             var message = new MimeMessage();
 
@@ -84,11 +86,11 @@ namespace EduHome.Controllers
                 emailbody = streamReader.ReadToEnd();
             }
 
-            await _userManager.AddToRoleAsync(newUser, UserRoles.Moderator.ToString());
 
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
             var link = Url.Action(nameof(VerifyEmail), "Account", new { userId = newUser.Id, token = code }, Request.Scheme, Request.Host.ToString());
 
+            
 
             emailbody = emailbody.Replace("{{fullname}}", $"{appUser.FullName}").Replace("{{code}}", $"{link}");
 
@@ -272,7 +274,7 @@ namespace EduHome.Controllers
 
 
         //Roles
-        [Authorize(Roles = "Admin")]
+
         public async Task CreateRole()
         {
             foreach (var role in Enum.GetValues(typeof(UserRoles)))

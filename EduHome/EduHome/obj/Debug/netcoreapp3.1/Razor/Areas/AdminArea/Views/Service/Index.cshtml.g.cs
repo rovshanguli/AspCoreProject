@@ -40,8 +40,15 @@ using EduHome.ViewModels.Admin;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\Areas\AdminArea\Views\_ViewImports.cshtml"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0a14a8bd74da796dbbb7baef7d0fe729c553d258", @"/Areas/AdminArea/Views/Service/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"283aed79e8566cd429071b68f27f7af875ccf7d1", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"deae99fbfd9e0b0a3a68e7b8cb2083042ebb7df5", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_Service_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Service>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-success"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,7 +95,7 @@ using EduHome.ViewModels.Admin;
 #line hidden
 #nullable disable
             WriteLiteral("<div class=\"container\">\r\n    <div class=\"header d-flex justify-content-between mt-3\">\r\n        <h3>Services</h3>\r\n        <div class=\"ml-4\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d2587194", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d2587400", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -153,7 +160,7 @@ using EduHome.ViewModels.Admin;
 #line hidden
 #nullable disable
             WriteLiteral(" ...</td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d25810067", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d25810273", async() => {
                 WriteLiteral("\r\n                            <i class=\"icon-options\"></i>\r\n                        ");
             }
             );
@@ -185,7 +192,7 @@ using EduHome.ViewModels.Admin;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d25812468", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d25812674", async() => {
                 WriteLiteral("\r\n                            <i class=\"icon-pencil\"></i>\r\n                        ");
             }
             );
@@ -217,7 +224,7 @@ using EduHome.ViewModels.Admin;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d25814866", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a14a8bd74da796dbbb7baef7d0fe729c553d25815072", async() => {
                 WriteLiteral("\r\n                            <button class=\"btn btn-danger btn-sm\" type=\"submit\">\r\n                                <i class=\" icon-close\"></i>\r\n                            </button>\r\n                        ");
             }
             );

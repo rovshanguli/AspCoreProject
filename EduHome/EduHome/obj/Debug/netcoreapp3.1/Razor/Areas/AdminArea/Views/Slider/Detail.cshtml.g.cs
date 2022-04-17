@@ -40,8 +40,15 @@ using EduHome.ViewModels.Admin;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\Areas\AdminArea\Views\_ViewImports.cshtml"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4d192b282786413251e45e8c7062bd927a8ed883", @"/Areas/AdminArea/Views/Slider/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"283aed79e8566cd429071b68f27f7af875ccf7d1", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"deae99fbfd9e0b0a3a68e7b8cb2083042ebb7df5", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_Slider_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Slider>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString("Alternate Text"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -82,7 +89,7 @@ using EduHome.ViewModels.Admin;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"container\">\r\n  \r\n        <h3>Slider detail</h3>\r\n        <div class=\"row\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4d192b282786413251e45e8c7062bd927a8ed8835465", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4d192b282786413251e45e8c7062bd927a8ed8835671", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -123,7 +130,7 @@ AddHtmlAttributeValue("", 189, Model.Image, 189, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </p>\r\n        </div>\r\n  \r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d192b282786413251e45e8c7062bd927a8ed8837831", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d192b282786413251e45e8c7062bd927a8ed8838037", async() => {
                 WriteLiteral("Go back");
             }
             );

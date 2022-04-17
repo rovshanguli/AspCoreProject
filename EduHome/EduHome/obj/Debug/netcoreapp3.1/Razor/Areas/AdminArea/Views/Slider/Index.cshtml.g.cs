@@ -40,8 +40,15 @@ using EduHome.ViewModels.Admin;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\user\Desktop\EduHomeBackEnd\EduHome\EduHome\Areas\AdminArea\Views\_ViewImports.cshtml"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"193575c0fdc84b91e6b801ac3f37fcbd46cedd58", @"/Areas/AdminArea/Views/Slider/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"283aed79e8566cd429071b68f27f7af875ccf7d1", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"deae99fbfd9e0b0a3a68e7b8cb2083042ebb7df5", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_Slider_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Slider>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-success"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -92,7 +99,7 @@ using EduHome.ViewModels.Admin;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n<div class=\"container mt-3\">\r\n    <div class=\"row\">\r\n        <div class=\"header d-flex justify-content-between mt-3\">\r\n            <h3>Sliders</h3>\r\n            <div class=\"ml-4\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd588163", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd588369", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -146,7 +153,7 @@ using EduHome.ViewModels.Admin;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5810692", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5810898", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -171,7 +178,7 @@ AddHtmlAttributeValue("", 1200, slider.Image, 1200, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5812472", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5812678", async() => {
                 WriteLiteral("\r\n                                    <i class=\"icon-options\"></i>\r\n                                ");
             }
             );
@@ -203,7 +210,7 @@ AddHtmlAttributeValue("", 1200, slider.Image, 1200, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5814903", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5815109", async() => {
                 WriteLiteral("\r\n                                    <i class=\"icon-pencil\"></i>\r\n                                ");
             }
             );
@@ -235,7 +242,7 @@ AddHtmlAttributeValue("", 1200, slider.Image, 1200, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5817331", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "193575c0fdc84b91e6b801ac3f37fcbd46cedd5817537", async() => {
                 WriteLiteral("\r\n                                    <button class=\"btn btn-danger btn-sm\" type=\"submit\">\r\n                                        <i class=\" icon-close\"></i>\r\n                                    </button>\r\n                                ");
             }
             );

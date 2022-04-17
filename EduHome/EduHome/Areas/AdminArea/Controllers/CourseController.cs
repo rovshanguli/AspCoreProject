@@ -6,6 +6,7 @@ using LessonMigration.Utilities.File;
 using LessonMigration.Utilities.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -24,17 +25,18 @@ namespace EduHome.Areas.AdminArea.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public CourseController(AppDbContext context, IWebHostEnvironment env)
+        private readonly SignInManager<AppUser> _signInManager;
+        public CourseController(AppDbContext context, IWebHostEnvironment env, SignInManager<AppUser> signInManager)
         {
             _context = context;
             _env = env;
+            _signInManager = signInManager;
         }
 
         public async Task<IActionResult> Index()
         {
             var AdminId = this.User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
             List<CourseDetail> courseDetails = new List<CourseDetail> { };
-            var admin = _context.Users.Where(m => m.Id == "ae5e7c95 - 14e6 - 4578 - 92f6 - 154190fe9216");
             if(AdminId == "ae5e7c95-14e6-4578-92f6-154190fe9216")
             {
                   courseDetails = await _context.CourseDetails.Include(m => m.Feature).ToListAsync();
@@ -60,7 +62,6 @@ namespace EduHome.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public async Task<IActionResult> Create(CoursesVM coursesVM)
         {
             if (ModelState["Photo"].ValidationState == ModelValidationState.Invalid) return View();
@@ -238,5 +239,17 @@ namespace EduHome.Areas.AdminArea.Controllers
         }
         #endregion
 
+
+
+
+        //LogOut
+        #region Logout
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Logout", "Course");
+
+        }
+        #endregion
     }
 }
