@@ -27,6 +27,7 @@ namespace EduHome.Data
         public DbSet<TeacherSkill> TeacherSkills { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
 
 
     }

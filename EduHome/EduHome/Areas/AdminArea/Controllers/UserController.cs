@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace EduHome.Areas.AdminArea.Controllers
@@ -35,8 +36,13 @@ namespace EduHome.Areas.AdminArea.Controllers
             List<AppUser> activeUsers = await _context.Users.Where(m => m.IsActivated == true).ToListAsync();
             List<AppUser> deactiveUsers = await _context.Users.Where(m => m.IsActivated == false).ToListAsync();
 
+            var activeUsersRole = await _userManager.Users.Where(m => m.IsActivated == true ).ToListAsync();
+            List<string> activeUsersRoles = new List<string>() { };
+            foreach (var user in activeUsersRole)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
 
-            
+            }
 
             UserVM userVM = new UserVM
             {

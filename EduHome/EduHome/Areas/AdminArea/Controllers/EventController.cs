@@ -4,6 +4,7 @@ using EduHome.Utilities.Helpers;
 using EduHome.ViewModels.Admin;
 using LessonMigration.Utilities.File;
 using LessonMigration.Utilities.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -17,6 +18,7 @@ using System.Threading.Tasks;
 namespace EduHome.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class EventController : Controller
     {
         private readonly AppDbContext _context;
